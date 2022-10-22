@@ -1,4 +1,4 @@
-# Sistema de cadastro de monografias
+# Sistema web de cadastro de monografias
 Sistema desenvolvido para a disciplina de Sistemas Distribuidos do curso de Sistemas de Informação da UFVJM.
 
 #### Como executar o projeto?
