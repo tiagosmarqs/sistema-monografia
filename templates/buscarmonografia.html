@@ -1,0 +1,82 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Buscar - Monografia
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Buscar Monografia</h1>
+<form action = "." method="GET" class="form-inline text-center">
+
+    {% csrf_token %}
+    <input type="search" class="form-control-lg" placeholder="" aria-label="Search" id="search" name="search">
+    <input type="submit" value="Buscar" class="btn btn-primary btn-lg">
+    <a href="/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Voltar</a>
+
+    <br><br>
+    
+    <h2>Filtros:</h2>
+    <input type="radio" class="btn-check" name="options" id="option1" value="titulo" autocomplete="off" checked>
+    <label class="btn btn-outline-secondary" for="option1">Título</label>
+
+    <input type="radio" class="btn-check" name="options" id="option2" value="autor" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="option2">Autor</label>
+
+    <input type="radio" class="btn-check" name="options" id="option3" value="orientador" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="option3">Orientador</label>
+
+    <input type="radio" class="btn-check" name="options" id="option4" value="coorientador" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="option4">Coorientador</label>
+
+    <input type="radio" class="btn-check" name="options" id="option5" value="resumo" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="option5">Resumo</label>
+
+    <input type="radio" class="btn-check" name="options" id="option6" value="palavraschave" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="option6">Palavras-chave </label>
+
+    <input type="radio" class="btn-check" name="options" id="option7" value="universidade" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="option7">Universidade</label>
+
+    <input type="radio" class="btn-check" name="options" id="option8" value="curso" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="option8">Curso</label>
+
+</form> 
+
+<br>
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Orientador</th>
+        <th scope="col">Coorientador</th>
+        <th scope="col">Data</th>
+        <th scope="col">Resumo</th>
+        <th scope="col">Palavras-chave</th>
+        <th scope="col">Universidade</th>
+        <th scope="col">Curso</th>
+        <th scope="col"> Link do PDF</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in lista %}
+            <tr>
+                <td>{{ i.titulo }}</td>
+                <td>{{ i.autor }}</td>
+                <td>{{ i.orientador }}</td>
+                <td>{{ i.coorientador }}</td>
+                <td>{{ i.data }}</td>
+                <td>{{ i.resumo }}</td>
+                <td>{{ i.palavras_chave }}</td>
+                <td>{{ i.universidade }}</td>
+                <td>{{ i.curso }}</td>
+                <td>{{ i.pdf }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+<br>
+
+{% endblock %}

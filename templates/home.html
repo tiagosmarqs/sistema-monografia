@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Sistema
+{% endblock %}
+
+{% block content %}
+
+
+<div class="d-grid gap-2 mt-3 mb-3">
+    <a href="/autor/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Autor</a>
+    <a href="/orientador/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Orientador</a>
+    <a href="/coorientador/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Coorientador</a>
+    <a href="/monografia/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Monografia</a>
+    <a href="/monografia/buscar" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Buscar Monografia</a>
+</div>
+
+{% endblock %}
