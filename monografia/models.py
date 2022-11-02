@@ -7,7 +7,7 @@ from orientador.models import Orientador
 # Create your models here.
 class Monografia(models.Model):
     titulo = models.CharField(max_length = 200)
-    autor = models.ForeignKey(Autor, on_delete = models.CASCADE)
+    autor = models.OneToOneField(Autor, on_delete = models.CASCADE)
     orientador = models.ForeignKey(Orientador, on_delete = models.CASCADE)
     coorientador = models.ForeignKey(Coorientador, on_delete = models.CASCADE)
     data = models.DateField()

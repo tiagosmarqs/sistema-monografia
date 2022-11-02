@@ -31,15 +31,6 @@ def index(request):
 
 def buscar(request):
 
-    #monografiapes = Monografia.objects.filter(universidade='Teste')
-
-    #if request.method == 'GET':
-
-        #return render(request, 'buscarmonografia.html')
-    #else:
-       
-        #return HttpResponse('teste')
-
     if request.GET.get('options') == 'titulo' and request.GET.get('search'):
 
         busca = request.GET.get('search')
