@@ -3,7 +3,7 @@ from django.shortcuts import render
 from coorientador.forms import CoorientadorForm
 
 # Create your views here.
-def index(request):
+def cadastrar(request):
 
     if request.method == 'GET':
 
