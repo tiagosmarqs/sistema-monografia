@@ -6,13 +6,45 @@
 
 {% block content %}
 
+<h1 class="bg-primary fw-light text-uppercase text-white text-center">Sistema de Gerenciamento de Monografias</h1>
 
-<div class="d-grid gap-2 mt-3 mb-3">
-    <a href="/autor/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Autor</a>
-    <a href="/orientador/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Orientador</a>
-    <a href="/coorientador/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Coorientador</a>
-    <a href="/monografia/" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cadastrar Monografia</a>
-    <a href="/monografia/buscar" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Buscar Monografia</a>
+<div class="row gap-3 mx-auto my-5 container">
+
+    <div class="btn-group col">
+        <button class="btn btn-secondary btn-lg dropdown-toggle fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Cadastrar
+        </button>
+        <ul class="dropdown-menu fs-3">
+            <li><a class="dropdown-item" href="/autor/">Autor</a></li>
+            <li><a class="dropdown-item" href="/orientador/">Orientador</a></li>
+            <li><a class="dropdown-item" href="/coorientador/">Coorientador</a></li>
+            <li><a class="dropdown-item" href="/monografia/">Monografia</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group col">
+        <button class="btn btn-secondary btn-lg dropdown-toggle fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Alterar
+        </button>
+        <ul class="dropdown-menu fs-3">
+            <li><a class="dropdown-item" href="#">Autor</a></li>
+            <li><a class="dropdown-item" href="#">Orientador</a></li>
+            <li><a class="dropdown-item" href="#">Coorientador</a></li>
+            <li><a class="dropdown-item" href="#">Monografia</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group col">
+        <button class="btn btn-secondary btn-lg dropdown-toggle fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Buscar
+        </button>
+        <ul class="dropdown-menu fs-3">
+            <li><a class="dropdown-item" href="/monografia/buscar">Monografia</a></li>
+        </ul>
+    </div>
+
 </div>
+
+
 
 {% endblock %}
