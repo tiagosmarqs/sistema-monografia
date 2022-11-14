@@ -9,9 +9,10 @@ def cadastrar(request):
 
         form = OrientadorForm()
         context = {
-            'form': form
+            'form': form,
+            'page': '/'
         }
-        return render(request, 'orientador.html', context=context)
+        return render(request, 'cadastrar_orientador.html', context=context)
     else:
 
         form = OrientadorForm(request.POST)
@@ -21,6 +22,7 @@ def cadastrar(request):
             form = OrientadorForm()
 
         context = {
-            'form': form
+            'form': form,
+            'page': '/'
         }
-        return render(request, 'orientador.html', context=context)
+        return render(request, 'cadastrar_orientador.html', context=context)

@@ -12,9 +12,10 @@ def cadastrar(request):
 
         form = MonografiaForm()
         context = {
-            'form': form
+            'form': form,
+            'page': '/'
         }
-        return render(request, 'monografia.html', context=context)
+        return render(request, 'cadastrar_monografia.html', context=context)
     else:
 
         form = MonografiaForm(request.POST)
@@ -24,9 +25,10 @@ def cadastrar(request):
             form = MonografiaForm()
 
         context = {
-            'form': form
+            'form': form,
+            'page': '/'
         }
-        return render(request, 'monografia.html', context=context)
+        return render(request, 'cadastrar_monografia.html', context=context)
 
 
 def buscar(request):
@@ -39,7 +41,7 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
     
     
     if request.GET.get('options') == 'autor' and request.GET.get('search'):
@@ -50,7 +52,7 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
         
     if request.GET.get('options') == 'orientador' and request.GET.get('search'):
 
@@ -60,7 +62,7 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
 
     if request.GET.get('options') == 'coorientador' and request.GET.get('search'):
 
@@ -70,7 +72,7 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
 
     if request.GET.get('options') == 'resumo' and request.GET.get('search'):
 
@@ -80,7 +82,7 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
 
     if request.GET.get('options') == 'palavraschave' and request.GET.get('search'):
 
@@ -90,7 +92,7 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
 
     if request.GET.get('options') == 'universidade' and request.GET.get('search'):
 
@@ -100,7 +102,7 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
 
     if request.GET.get('options') == 'curso' and request.GET.get('search'):
 
@@ -110,6 +112,6 @@ def buscar(request):
             'lista': resultado
         }
 
-        return render(request, 'buscarmonografia.html', context=context)
+        return render(request, 'buscar_monografia.html', context=context)
         
-    return render(request, 'buscarmonografia.html')
+    return render(request, 'buscar_monografia.html')

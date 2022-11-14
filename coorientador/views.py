@@ -9,9 +9,10 @@ def cadastrar(request):
 
         form = CoorientadorForm()
         context = {
-            'form': form
+            'form': form,
+            'page': '/'
         }
-        return render(request, 'coorientador.html', context=context)
+        return render(request, 'cadastrar_coorientador.html', context=context)
     else:
 
         form = CoorientadorForm(request.POST)
@@ -21,6 +22,7 @@ def cadastrar(request):
             form = CoorientadorForm()
 
         context = {
-            'form': form
+            'form': form,
+            'page': '/'
         }
-        return render(request, 'coorientador.html', context=context)
+        return render(request, 'cadastrar_coorientador.html', context=context)
