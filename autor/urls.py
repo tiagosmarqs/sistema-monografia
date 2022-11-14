@@ -4,5 +4,6 @@ from . import views
 urlpatterns =[
     path('', views.index, name='index'),
     path('cadastrar/', views.cadastrar, name='cadastrar'),
-    path('editar/<int:id>', views.editar, name='editar')
+    path('editar/<int:id>', views.editar, name='editar'),
+    path('deletar/<int:id>', views.deletar, name='deletar')
 ]

@@ -72,3 +72,11 @@ def editar(request, id):
         }
 
         return render(request, 'editar_autor.html', context=context)  
+
+
+def deletar(request, id):
+
+    autor = get_object_or_404(Autor, pk=id)
+    autor.delete()
+
+    return redirect('/autor/')
