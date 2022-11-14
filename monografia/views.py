@@ -1,11 +1,21 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 import monografia
 
 from monografia.forms import MonografiaForm
 from monografia.models import Monografia
 
 # Create your views here.
+def index(request):
+
+    monografia = Monografia.objects.all()
+    context = {
+        'lista': monografia,
+        'page': 'monografia'
+    }
+
+    return render(request, 'listar_monografia.html', context=context)
+
 def cadastrar(request):
 
     if request.method == 'GET':
@@ -115,3 +125,45 @@ def buscar(request):
         return render(request, 'buscar_monografia.html', context=context)
         
     return render(request, 'buscar_monografia.html')
+
+
+def editar(request, id):
+
+    monografia = get_object_or_404(Monografia, pk=id)
+    form = MonografiaForm(instance=monografia)
+
+    if request.method == 'POST':
+
+        form = MonografiaForm(request.POST, instance=monografia)
+
+        if form.is_valid():
+
+            monografia.save()
+
+            return redirect('/monografia/')
+        else:
+
+            context = {
+                'form': form, 
+                'monografia': monografia,
+                'page': '/monografia/'
+            }
+
+            return render(request, 'editar_monografia.html', context=context)        
+    else:
+
+        context = {
+            'form': form, 
+            'monografia': monografia,
+            'page': '/monografia/'
+        }
+
+        return render(request, 'editar_monografia.html', context=context)  
+
+
+def deletar(request, id):
+
+    monografia = get_object_or_404(Monografia, pk=id)
+    monografia.delete()
+
+    return redirect('/monografia/')

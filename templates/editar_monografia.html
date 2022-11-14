@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Editando '{{monografia.nome}}'
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Editando '{{monografia.nome}}' </h1>
+{% include 'formulario.html' %}
+
+{% endblock %}
