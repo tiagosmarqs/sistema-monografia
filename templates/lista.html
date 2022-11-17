@@ -1,15 +1,15 @@
 <table class="table table-bordered table-striped my-3 container">
     <thead>
       <tr class="row">
-        <th scope="col" class="col-9">Identificador</th>
-        <th scope="col" class="col-3">Opções</th>
+        <th scope="col" class="col">Identificador</th>
+        <th scope="col" class="col-2">Opções</th>
       </tr>
     </thead>
     <tbody>
         {% for i in lista %}
             <tr class="row">
-                <td class="col-9">{{ i }}</td>
-                <td class="col-3 text-center"> 
+                <td class="col">{{ i }}</td>
+                <td class="col-2 text-center"> 
 
                   <a href="/{{page}}/editar/{{i.id}}" class="text-success mx-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -32,6 +32,6 @@
 </table>
 
 
-<div class="container">
-  <a href="/" class="btn btn-danger btn-lg" tabindex="-1" role="button" aria-disabled="true">Voltar</a>
+<div class="container text-center">
+  <a href="/" class="btn btn-danger btn-lg" role="button" aria-disabled="true">Voltar</a>
 </div>
