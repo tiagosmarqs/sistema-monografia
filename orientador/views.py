@@ -9,10 +9,11 @@ def index(request):
     orientador = Orientador.objects.all()
     context = {
         'lista': orientador,
-        'page': 'orientador'
+        'page': 'orientador',
+        'titulo': 'Orientadores'
     }
 
-    return render(request, 'listar_orientador.html', context=context)
+    return render(request, 'listar.html', context=context)
 
 def cadastrar(request):
 

@@ -9,10 +9,11 @@ def index(request):
     coorientador = Coorientador.objects.all()
     context = {
         'lista': coorientador,
-        'page': 'coorientador'
+        'page': 'coorientador',
+        'titulo': 'Coorientadores'
     }
 
-    return render(request, 'listar_coorientador.html', context=context)
+    return render(request, 'listar.html', context=context)
 
 def cadastrar(request):
 

@@ -11,10 +11,11 @@ def index(request):
     monografia = Monografia.objects.all()
     context = {
         'lista': monografia,
-        'page': 'monografia'
+        'page': 'monografia',
+        'titulo': 'Monografias'
     }
 
-    return render(request, 'listar_monografia.html', context=context)
+    return render(request, 'listar.html', context=context)
 
 def cadastrar(request):
 

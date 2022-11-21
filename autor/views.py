@@ -10,10 +10,11 @@ def index(request):
     autor = Autor.objects.all()
     context = {
         'lista': autor,
-        'page': 'autor'
+        'page': 'autor',
+        'titulo': 'Autores'
     }
 
-    return render(request, 'listar_autor.html', context=context)
+    return render(request, 'listar.html', context=context)
 
 def cadastrar(request):
 
