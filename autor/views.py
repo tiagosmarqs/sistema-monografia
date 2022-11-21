@@ -22,9 +22,10 @@ def cadastrar(request):
         form = AutorForm()
         context = {
             'form': form,
-            'page': '/'
+            'page': '/',
+            'titulo': 'Autor'
         }
-        return render(request, 'cadastrar_autor.html', context=context)
+        return render(request, 'cadastrar.html', context=context)
     else:
 
         form = AutorForm(request.POST)
@@ -35,9 +36,10 @@ def cadastrar(request):
 
         context = {
             'form': form,
-            'page': '/'
+            'page': '/',
+            'titulo': 'Autor'
         }
-        return render(request, 'cadastrar_autor.html', context=context)
+        return render(request, 'cadastrar.html', context=context)
 
 
 def editar(request, id):
@@ -58,20 +60,20 @@ def editar(request, id):
 
             context = {
                 'form': form, 
-                'autor': autor,
+                'identificador': autor,
                 'page': '/autor/'
             }
 
-            return render(request, 'editar_autor.html', context=context)        
+            return render(request, 'editar.html', context=context)        
     else:
 
         context = {
             'form': form, 
-            'autor': autor,
+            'identificador': autor,
             'page': '/autor/'
         }
 
-        return render(request, 'editar_autor.html', context=context)  
+        return render(request, 'editar.html', context=context)  
 
 
 def deletar(request, id):

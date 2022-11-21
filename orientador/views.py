@@ -21,9 +21,10 @@ def cadastrar(request):
         form = OrientadorForm()
         context = {
             'form': form,
-            'page': '/'
+            'page': '/',
+            'titulo': 'Orientador'
         }
-        return render(request, 'cadastrar_orientador.html', context=context)
+        return render(request, 'cadastrar.html', context=context)
     else:
 
         form = OrientadorForm(request.POST)
@@ -34,9 +35,10 @@ def cadastrar(request):
 
         context = {
             'form': form,
-            'page': '/'
+            'page': '/',
+            'titulo': 'Orientador'
         }
-        return render(request, 'cadastrar_orientador.html', context=context)
+        return render(request, 'cadastrar.html', context=context)
 
 
 def editar(request, id):
@@ -57,20 +59,20 @@ def editar(request, id):
 
             context = {
                 'form': form, 
-                'orientador': orientador,
+                'identificador': orientador,
                 'page': '/orientador/'
             }
 
-            return render(request, 'editar_orientador.html', context=context)        
+            return render(request, 'editar.html', context=context)        
     else:
 
         context = {
             'form': form, 
-            'orientador': orientador,
+            'identificador': orientador,
             'page': '/orientador/'
         }
 
-        return render(request, 'editar_orientador.html', context=context)  
+        return render(request, 'editar.html', context=context)  
 
 
 def deletar(request, id):

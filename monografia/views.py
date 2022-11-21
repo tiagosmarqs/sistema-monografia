@@ -23,9 +23,10 @@ def cadastrar(request):
         form = MonografiaForm()
         context = {
             'form': form,
-            'page': '/'
+            'page': '/',
+            'titulo': 'Monografia'
         }
-        return render(request, 'cadastrar_monografia.html', context=context)
+        return render(request, 'cadastrar.html', context=context)
     else:
 
         form = MonografiaForm(request.POST)
@@ -36,9 +37,10 @@ def cadastrar(request):
 
         context = {
             'form': form,
-            'page': '/'
+            'page': '/',
+            'titulo': 'Monografia'
         }
-        return render(request, 'cadastrar_monografia.html', context=context)
+        return render(request, 'cadastrar.html', context=context)
 
 
 def buscar(request):
@@ -145,20 +147,20 @@ def editar(request, id):
 
             context = {
                 'form': form, 
-                'monografia': monografia,
+                'identificador': monografia,
                 'page': '/monografia/'
             }
 
-            return render(request, 'editar_monografia.html', context=context)        
+            return render(request, 'editar.html', context=context)        
     else:
 
         context = {
             'form': form, 
-            'monografia': monografia,
+            'identificador': monografia,
             'page': '/monografia/'
         }
 
-        return render(request, 'editar_monografia.html', context=context)  
+        return render(request, 'editar.html', context=context)  
 
 
 def deletar(request, id):

@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'orientador',
     'coorientador',
     'monografia',
+    'django_bootstrap5',
+    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,18 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+BOOTSTRAP_DATEPICKER_PLUS = {
+    "options": {
+        "locale": "pt-br",
+        "showClose": True,
+        "showClear": True,
+        "showTodayButton": True,
+    },
+    "variant_options": {
+        "date": {
+            "format": "DD/MM/YYYY",
+        },
+    }
+}

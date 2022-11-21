@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Cadastro - {{titulo}}
+{% endblock %}
+
+{% block content %}
+<div class="container bg-white my-3 p-3 rounded">
+    <h1 class="text-center">Cadastrar {{titulo}}</h1>
+    {% include 'formulario.html' %}
+</div>
+
+{% endblock %}
