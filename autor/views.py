@@ -23,7 +23,7 @@ def cadastrar(request):
         form = AutorForm()
         context = {
             'form': form,
-            'page': '/',
+            'page': 'autor',
             'titulo': 'Autor'
         }
         return render(request, 'cadastrar.html', context=context)
@@ -34,10 +34,11 @@ def cadastrar(request):
         if form.is_valid():
             autor = form.save()
             form = AutorForm()
+            return redirect('/autor/')
 
         context = {
             'form': form,
-            'page': '/',
+            'page': 'autor',
             'titulo': 'Autor'
         }
         return render(request, 'cadastrar.html', context=context)
@@ -62,7 +63,7 @@ def editar(request, id):
             context = {
                 'form': form, 
                 'identificador': autor,
-                'page': '/autor/'
+                'page': 'autor'
             }
 
             return render(request, 'editar.html', context=context)        
@@ -71,7 +72,7 @@ def editar(request, id):
         context = {
             'form': form, 
             'identificador': autor,
-            'page': '/autor/'
+            'page': 'autor'
         }
 
         return render(request, 'editar.html', context=context)  

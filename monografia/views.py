@@ -24,7 +24,7 @@ def cadastrar(request):
         form = MonografiaForm()
         context = {
             'form': form,
-            'page': '/',
+            'page': 'monografia',
             'titulo': 'Monografia'
         }
         return render(request, 'cadastrar.html', context=context)
@@ -35,10 +35,11 @@ def cadastrar(request):
         if form.is_valid():
             monografia = form.save()
             form = MonografiaForm()
+            return redirect('/monografia/')
 
         context = {
             'form': form,
-            'page': '/',
+            'page': 'monografia',
             'titulo': 'Monografia'
         }
         return render(request, 'cadastrar.html', context=context)
@@ -149,7 +150,7 @@ def editar(request, id):
             context = {
                 'form': form, 
                 'identificador': monografia,
-                'page': '/monografia/'
+                'page': 'monografia'
             }
 
             return render(request, 'editar.html', context=context)        
@@ -158,7 +159,7 @@ def editar(request, id):
         context = {
             'form': form, 
             'identificador': monografia,
-            'page': '/monografia/'
+            'page': 'monografia'
         }
 
         return render(request, 'editar.html', context=context)  

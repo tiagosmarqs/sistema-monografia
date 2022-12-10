@@ -22,7 +22,7 @@ def cadastrar(request):
         form = CoorientadorForm()
         context = {
             'form': form,
-            'page': '/',
+            'page': 'coorientador',
             'titulo': 'Coorientador'
         }
         return render(request, 'cadastrar.html', context=context)
@@ -33,10 +33,11 @@ def cadastrar(request):
         if form.is_valid():
             coorientador = form.save()
             form = CoorientadorForm()
+            return redirect('/coorientador/')
 
         context = {
             'form': form,
-            'page': '/',
+            'page': 'coorientador',
             'titulo': 'Coorientador'
         }
         return render(request, 'cadastrar.html', context=context)
@@ -61,7 +62,7 @@ def editar(request, id):
             context = {
                 'form': form, 
                 'identificador': coorientador,
-                'page': '/coorientador/'
+                'page': 'coorientador'
             }
 
             return render(request, 'editar.html', context=context)        
@@ -70,7 +71,7 @@ def editar(request, id):
         context = {
             'form': form, 
             'identificador': coorientador,
-            'page': '/coorientador/'
+            'page': 'coorientador'
         }
 
         return render(request, 'editar.html', context=context)  

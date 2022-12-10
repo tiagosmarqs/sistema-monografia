@@ -9,6 +9,65 @@
     <link rel="stylesheet" href= {% static "css/bootstrap.min.css" %}>
     <script type="text/javascript" src={% static "js/jquery-3.6.1.min.js" %}></script> 
   </head>
+
+  <div class="bg-white p-1 sticky-top">
+    <header class="container d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <span class="fs-4">Sistema de Gerenciamento de Monografias</span>
+      </a>
+      {% if page %}
+      {% if page == "monografia" %}
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/monografia/" class="nav-link active" aria-current="page">Monografias</a></li>
+        <li class="nav-item"><a href="/autor/" class="nav-link">Autores</a></li>
+        <li class="nav-item"><a href="/orientador/" class="nav-link">Orientadores</a></li>
+        <li class="nav-item"><a href="/coorientador/" class="nav-link">Coorientadores</a></li>
+        <li class="nav-item"><a href="/monografia/buscar/" class="nav-link">Buscar Monografia</a></li>
+      </ul>
+      {% endif %}
+
+      {% if page == "autor"  %}
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/monografia/" class="nav-link" >Monografias</a></li>
+        <li class="nav-item"><a href="/autor/" class="nav-link active" aria-current="page">Autores</a></li>
+        <li class="nav-item"><a href="/orientador/" class="nav-link">Orientadores</a></li>
+        <li class="nav-item"><a href="/coorientador/" class="nav-link">Coorientadores</a></li>
+        <li class="nav-item"><a href="/monografia/buscar/" class="nav-link">Buscar Monografia</a></li>
+      </ul>
+      {% endif %}
+
+      {% if page == "orientador"  %}
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/monografia/" class="nav-link" >Monografias</a></li>
+        <li class="nav-item"><a href="/autor/" class="nav-link">Autores</a></li>
+        <li class="nav-item"><a href="/orientador/" class="nav-link active" aria-current="page">Orientadores</a></li>
+        <li class="nav-item"><a href="/coorientador/" class="nav-link">Coorientadores</a></li>
+        <li class="nav-item"><a href="/monografia/buscar/" class="nav-link">Buscar Monografia</a></li>
+      </ul>
+      {% endif %}
+
+      {% if page == "coorientador"  %}
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/monografia/" class="nav-link" >Monografias</a></li>
+        <li class="nav-item"><a href="/autor/" class="nav-link">Autores</a></li>
+        <li class="nav-item"><a href="/orientador/" class="nav-link">Orientadores</a></li>
+        <li class="nav-item"><a href="/coorientador/" class="nav-link active" aria-current="page">Coorientadores</a></li>
+        <li class="nav-item"><a href="/monografia/buscar/" class="nav-link">Buscar Monografia</a></li>
+      </ul>
+      {% endif %}
+
+      {% else %}
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/monografia/" class="nav-link" >Monografias</a></li>
+        <li class="nav-item"><a href="/autor/" class="nav-link" >Autores</a></li>
+        <li class="nav-item"><a href="/orientador/" class="nav-link">Orientadores</a></li>
+        <li class="nav-item"><a href="/coorientador/" class="nav-link">Coorientadores</a></li>
+        <li class="nav-item"><a href="/monografia/buscar/" class="nav-link active" aria-current="page">Buscar Monografia</a></li>
+      </ul>
+      {% endif %}
+    </header>
+  </div>
+
   <body style="background-color: #eaeaea;">
     {% block content %}
 
