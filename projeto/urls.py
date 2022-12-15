@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
+from rest_framework import routers
+from projeto.api import viewsets
+
+router = routers.DefaultRouter()
+
+router.register(r'autor', viewsets.AutorViewSet, basename="Autor")
+router.register(r'orientador', viewsets.OrientadorViewSet, basename="Orientador")
+router.register(r'coorientador', viewsets.CoorientadorViewSet, basename="Coorientador")
+router.register(r'monografia', viewsets.MonografiaViewSet, basename="Monografia")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +34,5 @@ urlpatterns = [
     path('orientador/', include('orientador.urls')),
     path('coorientador/', include('coorientador.urls')),
     path('monografia/', include('monografia.urls')),
+    path('api/', include(router.urls)),
 ]
